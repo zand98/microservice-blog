@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: event-bus-depl
+  name: query-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: event-bus
+      app: query
   template:
     metadata:
       labels:
-        app: event-bus
+        app: query
     spec:
       containers:
-        - name: event-bus
-          image: zandyasin/event-bus
+        - name: query
+          image: zandyasin/query
           imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-clusterip-srv
+  name: query-clusterip-srv
 spec:
   selector:
-    app: event-bus
+    app: query
   ports:
-    - name: event-bus
+    - name: query
       protocol: TCP
-      port: 4005
-      targetPort: 4005
+      port: 4002
+      targetPort: 4002
