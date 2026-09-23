@@ -15,7 +15,7 @@ spec:
       containers:
         - name: comments
           image: zandyasin/comments
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
 ---
 apiVersion: v1
 kind: Service

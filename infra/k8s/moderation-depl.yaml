@@ -15,7 +15,7 @@ spec:
       containers:
         - name: moderation
           image: zandyasin/moderation
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
 ---
 apiVersion: v1
 kind: Service
